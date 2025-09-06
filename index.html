@@ -1,274 +1,136 @@
-<!-- Disclosure: This website was created and maintained by Sierra McRay, with the assistance <!-- Disclosure: This website was created and maintained by Sierra McRay, with the assistance 
-
- of an AI agent (GitHub Copilot) for structuring the columns and implementing the eye animation. --> of an AI agent (GitHub Copilot) for structuring the columns and implementing the eye animation. -->
-
-<!DOCTYPE html><!DOCTYPE html>
-
-<html><html>
-
-    <head>    <head>
-
-        <meta charset="utf-8">        <meta charset="utf-8">
-
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        <title></title>        <title></title>
-
-        <meta name="description" content="">        <meta name="description" content="">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="">    <link rel="stylesheet" href="">
-
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-    </head>    </head>
-
-    <style>    <style>
-
-            body {            body {
-
-                background-color: #181818;                background-color: #181818;
-
-                color: #f5f5f5;                color: #f5f5f5;
-
-                font-family: 'Roboto Mono', monospace;                font-family: 'Roboto Mono', monospace;
-
-            }            }
-
-            #hero-image-container {            #hero-image-container {
-
-                min-height: 500px;                min-height: 500px;
-
-                display: flex;                display: flex;
-
-                flex-direction: column;                flex-direction: column;
-
-                align-items: center;                align-items: center;
-
-                justify-content: center;                justify-content: center;
-
-                margin: 1px 0 40px 0;                margin: 1px 0 40px 0;
-
-            }            }
-
-            #hero-image {            #hero-image {
-
-                max-width: 1000px;                max-width: 1000px;
-
-                width: 100%;                width: 100%;
-
-                height: 700px;                height: 700px;
-
-                object-fit: cover;                object-fit: cover;
-
-                border-radius: 20px;                border-radius: 20px;
-
-            }            }
-
-            header {            header {
-
-                background-color: #181818;                background-color: #181818;
-
-                padding: 80px 20px 20px 20px;                padding: 80px 20px 20px 20px;
-
-                text-align: center;                text-align: center;
-
-                font-size: 2.5em;                font-size: 2.5em;
-
-            }            }
-
-            h1 {            h1 {
-
-                font-size: 36px;                font-size: 36px;
-
-                margin: 0;                margin: 0;
-
-                font-family: 'Press Start 2P', cursive;                font-family: 'Press Start 2P', cursive;
-
-                background: linear-gradient(90deg, #da1f7c, #fff);                background: linear-gradient(90deg, #da1f7c, #fff);
-
-                -webkit-background-clip: text;                -webkit-background-clip: text;
-
-                -webkit-text-fill-color: transparent;                -webkit-text-fill-color: transparent;
-
-                background-clip: text;                background-clip: text;
-
-                color: transparent;                color: transparent;
-
-            }            }
-
-            h3, h4 {            h3, h4 {
-
-                font-family: 'Press Start 2P', cursive;                font-family: 'Press Start 2P', cursive;
-
-            }            }
-
-            h2 {            h2 {
-
-                color: #b0b0b0;                color: #b0b0b0;
-
-                font-size: 20px;                font-size: 20px;
-
-                margin: 0;                margin: 0;
-
-                font-family: 'Roboto Mono', monospace;                font-family: 'Roboto Mono', monospace;
-
-            }            }
-
-            a {            a {
-
-                color: #4da3ff;                color: #4da3ff;
-
-            }            }
-
-            footer {            footer {
-
-                background-color: #222;                background-color: #222;
-
-                color: #f5f5f5;                color: #f5f5f5;
-
-            }            }
-
-    </style>    </style>
-
-    <body>    <body>
-
-        <header>        <header>
-
-            <h1>Hi, I'm Sierra McRay</h1>            <h1>Hi, I'm Sierra McRay</h1>
-
-        </header>        </header>
-
-        <h2 style="text-align:center; margin: 16px 0 24px 0;">With a background in Visual and Product Design, I have <br> always been obsessed with bringing new design concepts to <br> life. I currently work at Meta as a GenAI <br> Visual Arts Specialist.</h2>        <h2 style="text-align:center; margin: 16px 0 24px 0;">With a background in Visual and Product Design, I have <br> always been obsessed with bringing new design concepts to <br> life. I currently work at Meta with as a GenAI <br> Visual Arts Specialist.</h2>
-
-        <div id="hero-image-container">        <div id="hero-image-container">
-
-            <img id="hero-image" src="Images/eyesclosed.png" alt="Sierra McRay">            <img id="hero-image" src="Images/eyesclosed.png" alt="Sierra McRay">
-
-        </div>        </div>
-
-            <script>            <script>
-
-                const images = ["Images/eyesclosed.png", "Images/eyesopened.png"];                const images = ["Images/eyesclosed.png", "Images/eyesopened.png"];
-
-                let current = 0;                let current = 0;
-
-                setInterval(() => {                setInterval(() => {
-
-                    current = (current + 1) % images.length;                    current = (current + 1) % images.length;
-
-                    document.getElementById("hero-image").src = images[current];                    document.getElementById("hero-image").src = images[current];
-
-                }, 1000);                }, 1000);
-
-            </script>            </script>
-
-        <div class="three-column-headings">        <div class="three-column-headings">
-
-            <div>            <div>
-
-                <h3>My Skills:</h3>                <h3>My Skills:</h3>
-
-                <p>Adobe Creative Suite</p>                <p>Adobe Creative Suite</p>
-
-                <p>Figma & Sketch</p>                <p>Figma & Sketch</p>
-
-                <p>Artificial Intelligence & LLMs</p>                <p>Artificial Intelligence & LLMs</p>
-
-            </div>            </div>
-
-            <div>            <div>
-
-                <h4>A few of my favorite things</h4>                <h4>A few of my favorite things</h4>
-
-                <ol>                <ol>
-
-                    <li>HTML</li>                    <li>HTML</li>
-
-                    <li>CSS</li>                    <li>CSS</li>
-
-                    <li>Python</li>                    <li>Python</li>
-
-                </ol>                </ol>
-
-            </div>            </div>
-
-            <div>            <div>
-
-                <h4>How I like to work</h4>                <h4>How I like to work</h4>
-
-                <ul>                <ul>
-
-                    <li>Utilizing AI and machine learning</li>                    <li>Utilizing AI and machine learning</li>
-
-                    <li>Building brand identity</li>                    <li>Building brand identity</li>
-
-                    <li>Ensuring the best user experience</li>                    <li>Ensuring the best user experience</li>
-
-                </ul>                </ul>
-
-            </div>            </div>
-
-        </div>        </div>
-
-        <style>        <style>
-
-            .three-column-headings {            .three-column-headings {
-
-                display: flex;                display: flex;
-
-                justify-content: space-between;                justify-content: space-between;
-
-                gap: 32px;                gap: 32px;
-
-                margin: 40px 0 24px 0;                margin: 40px 0 24px 0;
-
-            }            }
-
-            .three-column-headings > div {            .three-column-headings > div {
-
-                flex: 1;                flex: 1;
-
-                text-align: center;                text-align: center;
-
-            }            }
-
-            .three-column-headings h3,            .three-column-headings h3,
-
-            .three-column-headings h4 {            .three-column-headings h4 {
-
-                margin-bottom: 16px;                margin-bottom: 16px;
-
-            }            }
-
-            .three-column-headings ol,            .three-column-headings ol,
-
-            .three-column-headings ul {            .three-column-headings ul {
-
-                margin: 0 auto;                margin: 0 auto;
-
-                display: inline-block;                display: inline-block;
-
-                text-align: left;                text-align: left;
-
-            }            }
-
-        </style>        </style>
-
-            <footer style="text-align:center; margin-top:30px;">            <footer style="text-align:center; margin-top:30px;">
-
-                <div style="display: flex; align-items: center; justify-content: center; gap: 16px;">                <div style="display: flex; align-items: center; justify-content: center; gap: 16px;">
-
-                    <img src="Images/sierra.png" alt="Sierra McRay" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">                    <img src="Images/sierra.png" alt="Sierra McRay" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
-
-                    <a href="https://www.linkedin.com/in/sierra-mcray/" target="_blank" rel="noopener noreferrer">Connect with me on LinkedIn</a>                    <a href="https://www.linkedin.com/in/sierra-mcray/" target="_blank" rel="noopener noreferrer">Connect with me on LinkedIn</a>
-
-                </div>                </div>
-
-            </footer>            </footer>
-
-    </body>    </body>
-
-</html></html>
-
+<!-- Disclosure: This website was created and maintained by Sierra McRay, with the assistance of an AI agent (GitHub Copilot) for structuring the columns and implementing the eye animation. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+            body {
+                background-color: #181818;
+                color: #f5f5f5;
+                font-family: 'Roboto Mono', monospace;
+            }
+            #hero-image-container {
+                min-height: 500px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 1px 0 40px 0;
+            }
+            #hero-image {
+                max-width: 1000px;
+                width: 100%;
+                height: 700px;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+            header {
+                background-color: #181818;
+                padding: 80px 20px 20px 20px;
+                text-align: center;
+                font-size: 2.5em;
+            }
+            h1 {
+                font-size: 36px;
+                margin: 0;
+                font-family: 'Press Start 2P', cursive;
+                background: linear-gradient(90deg, #da1f7c, #fff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+            }
+            h3, h4 {
+                font-family: 'Press Start 2P', cursive;
+            }
+            h2 {
+                color: #b0b0b0;
+                font-size: 20px;
+                margin: 0;
+                font-family: 'Roboto Mono', monospace;
+            }
+            a {
+                color: #4da3ff;
+            }
+            footer {
+                background-color: #222;
+                color: #f5f5f5;
+            }
+    </style>
+    <body>
+        <header>
+            <h1>Hi, I'm Sierra McRay</h1>
+        </header>
+        <h2 style="text-align:center; margin: 16px 0 24px 0;">With a background in Visual and Product Design, I have <br> always been obsessed with bringing new design concepts to <br> life. I currently work at Meta with as a GenAI <br> Visual Arts Specialist.</h2>
+        <div id="hero-image-container">
+            <img id="hero-image" src="Images/eyesclosed.png" alt="Sierra McRay">
+        </div>
+            <script>
+                const images = ["Images/eyesclosed.png", "Images/eyesopened.png"];
+                let current = 0;
+                setInterval(() => {
+                    current = (current + 1) % images.length;
+                    document.getElementById("hero-image").src = images[current];
+                }, 1000);
+            </script>
+        <div class="three-column-headings">
+            <div>
+                <h3>My Skills:</h3>
+                <p>Adobe Creative Suite</p>
+                <p>Figma & Sketch</p>
+                <p>Artificial Intelligence & LLMs</p>
+            </div>
+            <div>
+                <h4>A few of my favorite things</h4>
+                <ol>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Python</li>
+                </ol>
+            </div>
+            <div>
+                <h4>How I like to work</h4>
+                <ul>
+                    <li>Utilizing AI and machine learning</li>
+                    <li>Building brand identity</li>
+                    <li>Ensuring the best user experience</li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            .three-column-headings {
+                display: flex;
+                justify-content: space-between;
+                gap: 32px;
+                margin: 40px 0 24px 0;
+            }
+            .three-column-headings > div {
+                flex: 1;
+                text-align: center;
+            }
+            .three-column-headings h3,
+            .three-column-headings h4 {
+                margin-bottom: 16px;
+            }
+            .three-column-headings ol,
+            .three-column-headings ul {
+                margin: 0 auto;
+                display: inline-block;
+                text-align: left;
+            }
+        </style>
+            <footer style="text-align:center; margin-top:30px;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 16px;">
+                    <img src="Images/sierra.png" alt="Sierra McRay" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
+                    <a href="https://www.linkedin.com/in/sierra-mcray/" target="_blank" rel="noopener noreferrer">Connect with me on LinkedIn</a>
+                </div>
+            </footer>
+    </body>
+</html>
